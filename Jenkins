@@ -1,0 +1,8 @@
+pipline{
+    agent any
+stages{"server details"
+    stage{echo "server details"
+    stages{
+        <stage>''' lscpu</stage>
+    }}
+}}
