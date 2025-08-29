@@ -7,7 +7,7 @@ agent any
         stages{
             stage{'Git-checkout'}
             stepd{
-                git branch 'master',url:'https://github.com/reddysharan/devepos-demo.git'
+                git branch 'dev',url:'https://github.com/reddysharan/devepos-demo.git'
                 stage{'code compiler'
                 steps{
                     sh.'mvn compile'
