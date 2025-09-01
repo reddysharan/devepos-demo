@@ -1,1 +1,51 @@
 
+package com.example;
+
+import java.util.*;
+
+class Train {
+    private String name;
+    private int capacity;
+    private List<String> passengers;
+
+    public Train(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
+        this.passengers = new ArrayList<>();
+    }
+
+    public boolean addPassenger(String passenger) {
+        if (passengers.size() < capacity) {
+            passengers.add(passenger);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void printStatus() {
+        System.out.println("🚆 Train: " + name);
+        System.out.println("Capacity: " + capacity);
+        System.out.println("Passengers (" + passengers.size() + "): " + passengers);
+    }
+}
+
+public class TrainApp {
+    public static void main(String[] args) {
+        Train train = new Train("Shatabdi Express", 5);
+
+        train.addPassenger("Ravi");
+        train.addPassenger("Sita");
+        train.addPassenger("Arjun");
+        train.addPassenger("Meera");
+        train.addPassenger("Rahul");
+
+        // This one will not fit
+        boolean added = train.addPassenger("Anjali");
+        if (!added) {
+            System.out.println("❌ Train is full, cannot add Anjali");
+        }
+
+        train.printStatus();
+    }
+}
